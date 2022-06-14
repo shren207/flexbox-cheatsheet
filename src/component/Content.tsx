@@ -1,3 +1,6 @@
+import { useParams } from "react-router-dom";
+
 export default function Content() {
-  return <h1 className="bg-blue-300 w-full">Content</h1>;
+  const { id } = useParams();
+  return <h1 className="bg-blue-300 w-full">Content {id}</h1>;
 }

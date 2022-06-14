@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Sidebar() {
   return (
     <ul className="bg-amber-200 w-60">
@@ -17,3 +19,5 @@ export default function Sidebar() {
     </ul>
   );
 }
+
+// 하드코딩한 부분, map 고차함수 사용하여 boilerplate 줄이기
