@@ -11,6 +11,7 @@ function App() {
         <div className="flex h-screen">
           <Sidebar />
           <Routes>
+            <Route path="/" element={<Content />} />
             <Route path="/:id" element={<Content />} />
           </Routes>
         </div>
