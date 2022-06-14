@@ -1,14 +1,16 @@
-import Content from "./component/content/Content";
-import Index from "./component/header/Header";
-import Sidebar from "./component/sidebar/Sidebar";
+import Content from "./component/Content";
+import Sidebar from "./component/Sidebar";
+import Header from "./component/Header";
 
 function App() {
   return (
-    <>
-      <Index />
-      <Sidebar />
-      <Index />
-    </>
+    <div className="h-screen">
+      <Header />
+      <div className="flex h-screen">
+        <Sidebar />
+        <Content />
+      </div>
+    </div>
   );
 }
 
