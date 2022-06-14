@@ -1,8 +1,15 @@
-function App() {
+import Content from "./component/Content";
+import Header from "./component/Header";
+import Sidebar from "./component/Sidebar";
 
+function App() {
   return (
-    <div>hello world</div>
-  )
+    <>
+      <Header />
+      <Sidebar />
+      <Content />
+    </>
+  );
 }
 
-export default App
+export default App;
