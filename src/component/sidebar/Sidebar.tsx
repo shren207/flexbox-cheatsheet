@@ -6,7 +6,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 
-export default function Index() {
+export default function Sidebar() {
   return (
     <Box sx={{ width: "100%", maxWidth: "360", bgcolor: "background.paper" }}>
       <nav>

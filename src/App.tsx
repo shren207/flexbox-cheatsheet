@@ -1,12 +1,12 @@
-import Index from "./component/content";
-import Index from "./component/header";
-import Index from "./component/sidebar";
+import Content from "./component/content/Content";
+import Index from "./component/header/Header";
+import Sidebar from "./component/sidebar/Sidebar";
 
 function App() {
   return (
     <>
       <Index />
-      <Index />
+      <Sidebar />
       <Index />
     </>
   );
