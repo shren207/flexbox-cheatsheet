@@ -1,13 +1,13 @@
-import Content from "./component/Content";
-import Header from "./component/Header";
-import Sidebar from "./component/Sidebar";
+import Index from "./component/content";
+import Index from "./component/header";
+import Index from "./component/sidebar";
 
 function App() {
   return (
     <>
-      <Header />
-      <Sidebar />
-      <Content />
+      <Index />
+      <Index />
+      <Index />
     </>
   );
 }
