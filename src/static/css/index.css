@@ -6,7 +6,10 @@
 
 @layer base {
     html {
-        @apply h-screen font-BeBas
+        @apply h-full font-BeBas
+    }
+    body {
+        @apply w-full h-full
     }
 }
 

@@ -9,9 +9,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="h-screen">
+      <div className="min-h-screen flex flex-col">
         <Header />
-        <div className="flex h-screen">
+        <div className="relative flex flex-grow">
           <Sidebar clickedProp={clickedProp} />
           <Routes>
             <Route
