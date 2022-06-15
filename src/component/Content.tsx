@@ -15,46 +15,51 @@ export default function Content(): JSX.Element {
   }
   return (
     <article className={"bg-blue-300 w-full flex flex-col items-center"}>
-      <header className={"mt-14 mb-16 text-8xl"}>{dummy[+id].title}</header>
+      <header className={"mt-14 mb-16 text-9xl"}>{dummy[+id].title}</header>
       <div className={"mb-8"}>
-        <label htmlFor="display">Choose a display value : </label>
+        <label htmlFor="display" className={"text-xl"}>
+          Choose a {dummy[+id].title} value :{" "}
+        </label>
         <select id="display" onChange={updateValue}>
           <option selected>flex</option>
           <option>inline-flex</option>
         </select>
       </div>
       <main className={"bg-white w-9/12 h-3/6 border-4 max-w-[1500px]"}>
-        <div className={`bg-red-600 m-1 p-2.5 rounded   -md ${value}`}>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md"}>
+        <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>
+          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
             First
           </span>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md"}>
+          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
             Second
           </span>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md"}>
+          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
             Third
           </span>
         </div>
         <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md"}>
+          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
             First
           </span>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md"}>
+          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
             Second
           </span>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md"}>
+          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
+            Third
+          </span>
+        </div>
+        <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>
+          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
+            First
+          </span>
+          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
+            Second
+          </span>
+          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
             Third
           </span>
         </div>
       </main>
-
-      {/*<div className={"mt-3"}>*/}
-      {/*  <label htmlFor="display">Choose a display value : </label>*/}
-      {/*  <select id="display" onChange={updateValue}>*/}
-      {/*    <option selected>flex</option>*/}
-      {/*    <option>inline-flex</option>*/}
-      {/*  </select>*/}
-      {/*</div>*/}
     </article>
   );
 }

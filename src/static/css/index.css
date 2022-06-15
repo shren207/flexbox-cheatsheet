@@ -6,7 +6,7 @@
 
 @layer base {
     html {
-        @apply h-screen
+        @apply h-screen font-BeBas
     }
 }
 
