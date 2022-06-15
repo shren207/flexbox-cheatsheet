@@ -9,4 +9,4 @@
 ## libraries
 * vite
 * tailwindcss
-* react-router-dom
+* react-router-dom@6
