@@ -20,11 +20,10 @@ export default function Sidebar({
     <ul className={"bg-amber-200 w-60"}>
       {dummy.map((item: Dummy, index: number) => {
         return (
-          // <Link to={`/${index}`} key={index}> // 정상 동작하는 이전의 코드
           <Link to={`/${item.title}`} key={index}>
             <li
               className={`list-primary${
-                index.toString() === clickedProp ? " bg-green-500" : ""
+                item.title === clickedProp ? " bg-green-500" : ""
               }`}
             >
               {item.title}
