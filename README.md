@@ -1,4 +1,4 @@
-# shrinking-webpage
+# flexbox-cheatsheet
 
 ## branch
 
