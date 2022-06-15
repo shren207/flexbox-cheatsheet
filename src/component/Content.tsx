@@ -26,7 +26,7 @@ export default function Content({ setClickedProp }): JSX.Element {
       <header className={"mt-14 mb-16 text-9xl"}>{id}</header>
       <div className={"mb-8"}>
         <label htmlFor="display" className={"text-xl"}>
-          Choose a {id} value :
+          Choose a {id} value :{" "}
         </label>
         <select id="display" onChange={updateValue}>
           <option defaultValue={"flex"}>flex</option>
