@@ -22,4 +22,4 @@ export default function Sidebar() {
   );
 }
 
-// 하드코딩한 부분, map 고차함수 사용하여 boilerplate 줄이기
+// 하드코딩한 부분, map 고차함수 사용하여 boilerplate 줄이기 (완료)
