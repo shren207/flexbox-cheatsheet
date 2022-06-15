@@ -1,9 +1,14 @@
 import { useParams } from "react-router-dom";
 import { dummy } from "../static/data";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
-export default function Content(): JSX.Element {
+export default function Content({ setClicked }): JSX.Element {
   const { id } = useParams();
+
+  useEffect(() => {
+    setClicked(id);
+  }, [id]);
+
   const [value, setValue] = useState<string>("flex");
 
   const updateValue = (event: ChangeEvent<HTMLSelectElement>): void => {
@@ -23,7 +28,7 @@ export default function Content(): JSX.Element {
           Choose a {dummy[+id].title} value :
         </label>
         <select id="display" onChange={updateValue}>
-          <option selected>flex</option>
+          <option defaultValue={"flex"}>flex</option>
           <option>inline-flex</option>
         </select>
       </div>
