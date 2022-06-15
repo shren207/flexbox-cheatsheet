@@ -8,7 +8,7 @@ type Dummy = {
 
 export default function Sidebar() {
   return (
-    <ul className="bg-amber-200 w-60">
+    <ul className={"bg-amber-200 w-60"}>
       {dummy.map((item: Dummy, index: number) => {
         return (
           <Link to={`/${index}`}>

@@ -7,6 +7,8 @@ export default function Content(): JSX.Element {
   const [value, setValue] = useState<string>("flex");
 
   const updateValue = (event: ChangeEvent<HTMLSelectElement>): void => {
+    // argument 타입을 ChangeEvent<HTMLInputElement> 으로 지정하게 되면 에러가 발생함.
+    // 왜냐하면 <select> 엘리먼트에는 ChangeEvent<HTMLSelectElement>라는 타입을 사용해야 하기 때문(?)
     setValue(event.target.value);
   };
 
@@ -18,7 +20,7 @@ export default function Content(): JSX.Element {
       <header className={"mt-14 mb-16 text-9xl"}>{dummy[+id].title}</header>
       <div className={"mb-8"}>
         <label htmlFor="display" className={"text-xl"}>
-          Choose a {dummy[+id].title} value :{" "}
+          Choose a {dummy[+id].title} value :
         </label>
         <select id="display" onChange={updateValue}>
           <option selected>flex</option>
