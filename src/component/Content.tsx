@@ -2,11 +2,11 @@ import { useParams } from "react-router-dom";
 import { dummy } from "../static/data";
 import { ChangeEvent, useEffect, useState } from "react";
 
-export default function Content({ setClicked }): JSX.Element {
+export default function Content({ setClickedProp }): JSX.Element {
   const { id } = useParams();
 
   useEffect(() => {
-    setClicked(id);
+    setClickedProp(id);
   }, [id]);
 
   // id를 string으로 하니까 에러 수정됨

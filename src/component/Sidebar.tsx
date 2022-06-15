@@ -8,13 +8,13 @@ type Dummy = {
 };
 
 export default function Sidebar({
-  isClicked,
+  clickedProp,
 }: {
-  isClicked: string;
+  clickedProp: string;
 }): JSX.Element {
   useEffect(() => {
-    console.log(isClicked);
-  }, [isClicked]);
+    console.log(clickedProp);
+  }, [clickedProp]);
 
   return (
     <ul className={"bg-amber-200 w-60"}>
@@ -24,7 +24,7 @@ export default function Sidebar({
           <Link to={`/${item.title}`} key={index}>
             <li
               className={`list-primary${
-                index.toString() === isClicked ? " bg-green-500" : ""
+                index.toString() === clickedProp ? " bg-green-500" : ""
               }`}
             >
               {item.title}
