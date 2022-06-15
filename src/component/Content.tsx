@@ -8,8 +8,8 @@ export default function Content(): JSX.Element {
   }
   return (
     <article className={"bg-blue-300 w-full flex flex-col items-center"}>
-      <h1 className={"mt-16 mb-32 text-8xl"}>{dummy[+id].title}</h1>
-      <h1 className={"bg-white w-9/12 h-3/6 border-4"}>
+      <header className={"mt-16 mb-32 text-8xl"}>{dummy[+id].title}</header>
+      <main className={"bg-white w-9/12 h-3/6 border-4"}>
         <div className={"bg-red-600 m-1 p-2.5 rounded-md flex"}>
           <span className={"bg-black text-white m-1 p-2.5 rounded-md"}>
             First
@@ -32,7 +32,7 @@ export default function Content(): JSX.Element {
             Third
           </span>
         </div>
-      </h1>
+      </main>
     </article>
   );
 }
