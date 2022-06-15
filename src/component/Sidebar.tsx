@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { dummy } from "../static/data";
+import { dummy } from "../static/dummy";
 import { useEffect } from "react";
 
 type Dummy = {
   type: string;
   title: string;
+  subProps: string[];
 };
 
 export default function Sidebar({
