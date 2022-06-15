@@ -9,6 +9,7 @@ export default function Content({ setClicked }): JSX.Element {
     setClicked(id);
   }, [id]);
 
+  // id를 string으로 하니까 에러 수정됨
   const [value, setValue] = useState<string>("flex");
 
   const updateValue = (event: ChangeEvent<HTMLSelectElement>): void => {
@@ -22,10 +23,10 @@ export default function Content({ setClicked }): JSX.Element {
   }
   return (
     <article className={"bg-blue-300 w-full flex flex-col items-center"}>
-      <header className={"mt-14 mb-16 text-9xl"}>{dummy[+id].title}</header>
+      <header className={"mt-14 mb-16 text-9xl"}>{id}</header>
       <div className={"mb-8"}>
         <label htmlFor="display" className={"text-xl"}>
-          Choose a {dummy[+id].title} value :
+          Choose a {id} value :
         </label>
         <select id="display" onChange={updateValue}>
           <option defaultValue={"flex"}>flex</option>
