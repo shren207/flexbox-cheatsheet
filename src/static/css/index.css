@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +12,7 @@
 
 @layer components {
     .list-primary {
-        @apply transition ease-in-out duration-300 hover:underline hover:bg-green-500 pl-3 pt-5 pb-5
+        @apply transition ease-in-out duration-300 pl-3 pt-5 pb-5 text-2xl font-BeBas hover:bg-green-500
     }
     .list-container {
         @apply bg-amber-700 text-white
