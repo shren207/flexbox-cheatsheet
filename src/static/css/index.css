@@ -8,9 +8,6 @@
     html {
         @apply h-full font-BeBas
     }
-    body {
-        @apply w-full h-full
-    }
 }
 
 @layer components {
