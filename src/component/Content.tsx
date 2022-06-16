@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { ChangeEvent, useEffect, useState } from "react";
 import { dummy } from "../static/dummy";
 import Dropdown from "./Dropdown";
+import Display from "./props/Display";
 
 type ContentProps = {
   setClickedProp: (property: string) => void;
@@ -30,39 +31,40 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
       <header className={"mt-14 mb-16 text-9xl"}>{property}</header>
       <Dropdown property={property} updateValue={updateValue} />
       <main className={"bg-white w-9/12 h-3/6 border-4 max-w-[1500px]"}>
-        <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-            First
-          </span>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-            Second
-          </span>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-            Third
-          </span>
-        </div>
-        <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-            First
-          </span>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-            Second
-          </span>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-            Third
-          </span>
-        </div>
-        <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-            First
-          </span>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-            Second
-          </span>
-          <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-            Third
-          </span>
-        </div>
+        {property === "display" ? <Display value={value} /> : null}
+        {/*<div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>*/}
+        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
+        {/*    First*/}
+        {/*  </span>*/}
+        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
+        {/*    Second*/}
+        {/*  </span>*/}
+        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
+        {/*    Third*/}
+        {/*  </span>*/}
+        {/*</div>*/}
+        {/*<div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>*/}
+        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
+        {/*    First*/}
+        {/*  </span>*/}
+        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
+        {/*    Second*/}
+        {/*  </span>*/}
+        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
+        {/*    Third*/}
+        {/*  </span>*/}
+        {/*</div>*/}
+        {/*<div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>*/}
+        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
+        {/*    First*/}
+        {/*  </span>*/}
+        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
+        {/*    Second*/}
+        {/*  </span>*/}
+        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
+        {/*    Third*/}
+        {/*  </span>*/}
+        {/*</div>*/}
       </main>
     </article>
   );
