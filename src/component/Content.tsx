@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { ChangeEvent, useEffect, useState } from "react";
+import { dummy } from "../static/dummy";
 import Dropdown from "./Dropdown";
 
 type ContentProps = {
@@ -15,7 +16,8 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
   }, [property]);
 
   // property를 string으로 하니까 에러 수정됨
-  const [value, setValue] = useState<string>("flex");
+  const { subProps } = dummy.find((item) => item["property"] === property)!;
+  const [value, setValue] = useState<string>(subProps[0]);
 
   const updateValue = (event: ChangeEvent<HTMLSelectElement>): void => {
     // argument 타입을 ChangeEvent<HTMLInputElement> 으로 지정하게 되면 에러가 발생함.
