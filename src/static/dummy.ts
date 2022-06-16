@@ -14,8 +14,8 @@ export const dummy = [
     type: "container",
     property: "justify-content",
     subProps: [
-      "start",
-      "end",
+      "flex-start",
+      "flex-end",
       "center",
       "space-between",
       "space-around",

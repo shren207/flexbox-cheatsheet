@@ -1,4 +1,6 @@
 export default function Display({ value }: { value: string }): JSX.Element {
+  // value => flex | inline-flex
+  // tailwindcss => flex | inline-flex
   return (
     <>
       <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>

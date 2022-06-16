@@ -44,25 +44,25 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
         {property === "display" ? (
           <Display value={value} />
         ) : property === "flex-direction" ? (
-          <FlexDirection />
+          <FlexDirection value={value} />
         ) : property === "flex-wrap" ? (
-          <FlexWrap />
+          <FlexWrap value={value} />
         ) : property === "justify-content" ? (
-          <JustifyContent />
+          <JustifyContent value={value} />
         ) : property === "align-items" ? (
-          <AlignItems />
+          <AlignItems value={value} />
         ) : property === "align-content" ? (
-          <AlignContent />
+          <AlignContent value={value} />
         ) : property === "order" ? (
-          <Order />
+          <Order value={value} />
         ) : property === "flex-grow" ? (
-          <FlexGrow />
+          <FlexGrow value={value} />
         ) : property === "flex-basis" ? (
-          <FlexBasis />
+          <FlexBasis value={value} />
         ) : property === "flex-shrink" ? (
-          <FlexShrink />
+          <FlexShrink value={value} />
         ) : property === "align-self" ? (
-          <AlignSelf />
+          <AlignSelf value={value} />
         ) : null}
       </main>
     </article>
