@@ -3,6 +3,16 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { dummy } from "../static/dummy";
 import Dropdown from "./Dropdown";
 import Display from "./props/Display";
+import FlexDirection from "./props/Flex-Direction";
+import FlexWrap from "./props/Flex-Wrap";
+import JustifyContent from "./props/Justify-Content";
+import AlignItems from "./props/Align-Items";
+import AlignContent from "./props/Align-Content";
+import Order from "./props/Order";
+import FlexGrow from "./props/Flex-Grow";
+import FlexShrink from "./props/Flex-Shrink";
+import FlexBasis from "./props/Flex-Basis";
+import AlignSelf from "./props/Align-Self";
 
 type ContentProps = {
   setClickedProp: (property: string) => void;
@@ -31,48 +41,33 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
       <header className={"mt-14 mb-16 text-9xl"}>{property}</header>
       <Dropdown property={property} updateValue={updateValue} />
       <main className={"bg-white w-9/12 h-3/6 border-4 max-w-[1500px]"}>
-        {property === "display" ? <Display value={value} /> : null}
-        {/*<div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>*/}
-        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
-        {/*    First*/}
-        {/*  </span>*/}
-        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
-        {/*    Second*/}
-        {/*  </span>*/}
-        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
-        {/*    Third*/}
-        {/*  </span>*/}
-        {/*</div>*/}
-        {/*<div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>*/}
-        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
-        {/*    First*/}
-        {/*  </span>*/}
-        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
-        {/*    Second*/}
-        {/*  </span>*/}
-        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
-        {/*    Third*/}
-        {/*  </span>*/}
-        {/*</div>*/}
-        {/*<div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>*/}
-        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
-        {/*    First*/}
-        {/*  </span>*/}
-        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
-        {/*    Second*/}
-        {/*  </span>*/}
-        {/*  <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>*/}
-        {/*    Third*/}
-        {/*  </span>*/}
-        {/*</div>*/}
+        {property === "display" ? (
+          <Display value={value} />
+        ) : property === "flex-direction" ? (
+          <FlexDirection />
+        ) : property === "flex-wrap" ? (
+          <FlexWrap />
+        ) : property === "justify-content" ? (
+          <JustifyContent />
+        ) : property === "align-items" ? (
+          <AlignItems />
+        ) : property === "align-content" ? (
+          <AlignContent />
+        ) : property === "order" ? (
+          <Order />
+        ) : property === "flex-grow" ? (
+          <FlexGrow />
+        ) : property === "flex-basis" ? (
+          <FlexBasis />
+        ) : property === "flex-shrink" ? (
+          <FlexShrink />
+        ) : property === "align-self" ? (
+          <AlignSelf />
+        ) : null}
       </main>
     </article>
   );
 }
-
-// 여기서 밑에 flex, inline-flex dropdown 추가하거나 하는 식으로 코드 구현하면 간단할 것 같은데...?
-// 은근 생각보다 간단할 것 같다. 노하우만 이해한다면 일일히 다 하드코딩하는 것보다 훨씬 간단할 것 같다.
-// "완료"
 
 // 일단 dropdown 추가해서 메뉴별로 서브 프로퍼티 구현해보았다.
 // 2개 정도는 정상적으로 동작하는 것 같다.
