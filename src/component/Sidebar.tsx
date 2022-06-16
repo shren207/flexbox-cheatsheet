@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 type Dummy = {
   type: string;
-  title: string;
+  property: string;
   subProps: string[];
 };
 
@@ -21,13 +21,13 @@ export default function Sidebar({
     <ul className={"bg-amber-200 w-60"}>
       {dummy.map((item: Dummy, index: number) => {
         return (
-          <Link to={`/${item.title}`} key={index}>
+          <Link to={`/${item.property}`} key={index}>
             <li
               className={`list-primary${
-                item.title === clickedProp ? " bg-green-500" : ""
+                item.property === clickedProp ? " bg-green-500" : ""
               }`}
             >
-              {item.title}
+              {item.property}
             </li>
           </Link>
         );

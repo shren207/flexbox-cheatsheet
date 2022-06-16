@@ -1,15 +1,20 @@
 import { useParams } from "react-router-dom";
-import { dummy } from "../static/dummy";
 import { ChangeEvent, useEffect, useState } from "react";
+import Dropdown from "./Dropdown";
 
-export default function Content({ setClickedProp }): JSX.Element {
-  const { id } = useParams();
+type ContentProps = {
+  setClickedProp: (property: string) => void;
+};
+
+export default function Content({ setClickedProp }: ContentProps): JSX.Element {
+  const { property } = useParams(); // display, flex-direction 이런 값들이 들어온다.
+  if (property === undefined) return <div>Error</div>;
 
   useEffect(() => {
-    setClickedProp(id);
-  }, [id]);
+    setClickedProp(property);
+  }, [property]);
 
-  // id를 string으로 하니까 에러 수정됨
+  // property를 string으로 하니까 에러 수정됨
   const [value, setValue] = useState<string>("flex");
 
   const updateValue = (event: ChangeEvent<HTMLSelectElement>): void => {
@@ -18,23 +23,10 @@ export default function Content({ setClickedProp }): JSX.Element {
     setValue(event.target.value);
   };
 
-  if (id === undefined) {
-    return <div>404 Error</div>;
-  }
   return (
     <article className={"bg-blue-300 w-full flex flex-col items-center"}>
-      <header className={"mt-14 mb-16 text-9xl"}>{id}</header>
-      {/*dropdown을 담당하는 nav 엘리먼트는 따로 component로 작성해야 할 듯*/}
-      <nav className={"mb-8"}>
-        <label htmlFor="display" className={"text-xl"}>
-          Choose a {id} value :{" "}
-        </label>
-        <select onChange={updateValue}>
-          {/*여기다가 map 함수 작성*/}
-          <option defaultValue={"flex"}>flex</option>
-          <option>inline-flex</option>
-        </select>
-      </nav>
+      <header className={"mt-14 mb-16 text-9xl"}>{property}</header>
+      <Dropdown property={property} updateValue={updateValue} />
       <main className={"bg-white w-9/12 h-3/6 border-4 max-w-[1500px]"}>
         <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>
           <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>

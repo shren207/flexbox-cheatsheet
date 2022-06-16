@@ -1,18 +1,18 @@
 export const dummy = [
-  { type: "container", title: "display", subProps: ["flex", "inline-flex"] },
+  { type: "container", property: "display", subProps: ["flex", "inline-flex"] },
   {
     type: "container",
-    title: "flex-direction",
+    property: "flex-direction",
     subProps: ["row", "row-reverse", "column", "column-reverse"],
   },
   {
     type: "container",
-    title: "flex-wrap",
+    property: "flex-wrap",
     subProps: ["nowrap", "wrap", "wrap-reverse"],
   },
   {
     type: "container",
-    title: "justify-content",
+    property: "justify-content",
     subProps: [
       "start",
       "end",
@@ -24,12 +24,12 @@ export const dummy = [
   },
   {
     type: "container",
-    title: "align-items",
+    property: "align-items",
     subProps: ["start", "end", "center", "stretch"],
   },
   {
     type: "container",
-    title: "align-content",
+    property: "align-content",
     subProps: [
       "start",
       "end",
@@ -39,13 +39,13 @@ export const dummy = [
       "space-evenly",
     ],
   },
-  { type: "item", title: "order", subProps: ["3", "-1", "2", "4"] },
-  { type: "item", title: "flex-grow", subProps: ["1", "2", "3"] },
-  { type: "item", title: "flex-basis", subProps: ["auto", "0", "200px"] },
-  { type: "item", title: "flex-shrink", subProps: ["0", "1", "2"] },
+  { type: "item", property: "order", subProps: ["3", "-1", "2", "4"] },
+  { type: "item", property: "flex-grow", subProps: ["1", "2", "3"] },
+  { type: "item", property: "flex-basis", subProps: ["auto", "0", "200px"] },
+  { type: "item", property: "flex-shrink", subProps: ["0", "1", "2"] },
   {
     type: "item",
-    title: "align-self",
+    property: "align-self",
     subProps: ["start", "end", "center", "stretch"],
   },
 ];

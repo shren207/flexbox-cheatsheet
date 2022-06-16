@@ -19,7 +19,7 @@ function App() {
               element={<Content setClickedProp={setClickedProp} />}
             />
             <Route
-              path="/:id"
+              path="/:property"
               element={<Content setClickedProp={setClickedProp} />}
             />
           </Routes>
