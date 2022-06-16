@@ -13,12 +13,10 @@ export default function Sidebar({
 }: {
   clickedProp: string;
 }): JSX.Element {
-  useEffect(() => {
-    console.log(clickedProp);
-  }, [clickedProp]);
+  useEffect(() => {}, [clickedProp]);
 
   return (
-    <ul className={"bg-amber-200 w-60"}>
+    <ul className={"bg-amber-200 min-w-[206px]"}>
       {dummy.map((item: Dummy, index: number) => {
         return (
           <Link to={`/${item.property}`} key={index}>

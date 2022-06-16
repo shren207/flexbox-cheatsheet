@@ -25,7 +25,7 @@ export const dummy = [
   {
     type: "container",
     property: "align-items",
-    subProps: ["start", "end", "center", "stretch"],
+    subProps: ["flex-start", "flex-end", "center", "stretch"],
   },
   {
     type: "container",

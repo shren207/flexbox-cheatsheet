@@ -20,8 +20,8 @@ export default function Dropdown({
         Choose a {property} value :{" "}
       </label>
       <select id={property} onChange={updateValue}>
-        {subProps.map((subProp) => (
-          <option>{subProp}</option>
+        {subProps.map((subProp, index) => (
+          <option key={index}>{subProp}</option>
         ))}
       </select>
     </nav>

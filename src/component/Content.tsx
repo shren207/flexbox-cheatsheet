@@ -21,14 +21,15 @@ type ContentProps = {
 export default function Content({ setClickedProp }: ContentProps): JSX.Element {
   const { property } = useParams(); // display, flex-direction 이런 값들이 들어온다.
   if (property === undefined) return <div>Error</div>;
+  const { subProps } = dummy.find((item) => item["property"] === property)!;
+  const [value, setValue] = useState<string>(subProps[0]);
 
   useEffect(() => {
     setClickedProp(property);
-  }, [property]);
+    setValue(value);
+  }, [property, value]);
 
   // property를 string으로 하니까 에러 수정됨
-  const { subProps } = dummy.find((item) => item["property"] === property)!;
-  const [value, setValue] = useState<string>(subProps[0]);
 
   const updateValue = (event: ChangeEvent<HTMLSelectElement>): void => {
     // argument 타입을 ChangeEvent<HTMLInputElement> 으로 지정하게 되면 에러가 발생함.
@@ -40,29 +41,29 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
     <article className={"bg-blue-300 w-full flex flex-col items-center"}>
       <header className={"mt-14 mb-16 text-9xl"}>{property}</header>
       <Dropdown property={property} updateValue={updateValue} />
-      <main className={"bg-white w-9/12 h-3/6 border-4 max-w-[1500px]"}>
+      <main className={"bg-white w-9/12 h-2/5 border-4 max-w-[1500px]"}>
         {property === "display" ? (
-          <Display value={value} />
+          <Display value={value} setValue={setValue} />
         ) : property === "flex-direction" ? (
-          <FlexDirection value={value} />
+          <FlexDirection value={value} setValue={setValue} />
         ) : property === "flex-wrap" ? (
-          <FlexWrap value={value} />
+          <FlexWrap value={value} setValue={setValue} />
         ) : property === "justify-content" ? (
-          <JustifyContent value={value} />
+          <JustifyContent value={value} setValue={setValue} />
         ) : property === "align-items" ? (
-          <AlignItems value={value} />
+          <AlignItems value={value} setValue={setValue} />
         ) : property === "align-content" ? (
-          <AlignContent value={value} />
+          <AlignContent value={value} setValue={setValue} />
         ) : property === "order" ? (
-          <Order value={value} />
+          <Order value={value} setValue={setValue} />
         ) : property === "flex-grow" ? (
-          <FlexGrow value={value} />
+          <FlexGrow value={value} setValue={setValue} />
         ) : property === "flex-basis" ? (
-          <FlexBasis value={value} />
+          <FlexBasis value={value} setValue={setValue} />
         ) : property === "flex-shrink" ? (
-          <FlexShrink value={value} />
+          <FlexShrink value={value} setValue={setValue} />
         ) : property === "align-self" ? (
-          <AlignSelf value={value} />
+          <AlignSelf value={value} setValue={setValue} />
         ) : null}
       </main>
     </article>

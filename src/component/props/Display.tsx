@@ -1,40 +1,37 @@
-export default function Display({ value }: { value: string }): JSX.Element {
+import { useEffect } from "react";
+
+export default function Display({
+  value,
+  setValue,
+}: {
+  value: string;
+  setValue: (value: string) => void;
+}): JSX.Element {
   // value => flex | inline-flex
   // tailwindcss => flex | inline-flex
+  useEffect(() => {
+    setValue("flex");
+    return () => {
+      setValue("");
+    };
+  });
+
   return (
     <>
-      <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>
-        <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-          First
-        </span>
-        <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-          Second
-        </span>
-        <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-          Third
-        </span>
+      <div className={`container-primary items-start ${value}`}>
+        <div className={"item-primary"}>One</div>
+        <div className={"item-primary"}>Two</div>
+        <div className={"item-primary"}>Three</div>
       </div>
-      <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>
-        <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-          First
-        </span>
-        <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-          Second
-        </span>
-        <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-          Third
-        </span>
+      <div className={`container-primary ${value}`}>
+        <div className={"item-primary"}>One</div>
+        <div className={"item-primary"}>Two</div>
+        <div className={"item-primary"}>Three</div>
       </div>
-      <div className={`bg-red-600 m-1 p-2.5 rounded-md ${value}`}>
-        <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-          First
-        </span>
-        <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-          Second
-        </span>
-        <span className={"bg-black text-white m-1 p-2.5 rounded-md text-2xl"}>
-          Third
-        </span>
+      <div className={`container-primary ${value}`}>
+        <div className={"item-primary"}>One</div>
+        <div className={"item-primary"}>Two</div>
+        <div className={"item-primary"}>Three</div>
       </div>
     </>
   );
