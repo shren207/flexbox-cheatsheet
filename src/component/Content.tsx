@@ -29,8 +29,6 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
     setValue(value);
   }, [property, value]);
 
-  // property를 string으로 하니까 에러 수정됨
-
   const updateValue = (event: ChangeEvent<HTMLSelectElement>): void => {
     // argument 타입을 ChangeEvent<HTMLInputElement> 으로 지정하게 되면 에러가 발생함.
     // 왜냐하면 <select> 엘리먼트에는 ChangeEvent<HTMLSelectElement>라는 타입을 사용해야 하기 때문(?)
@@ -69,8 +67,3 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
     </article>
   );
 }
-
-// 일단 dropdown 추가해서 메뉴별로 서브 프로퍼티 구현해보았다.
-// 2개 정도는 정상적으로 동작하는 것 같다.
-// 이제 내가 원하는 것은, 위와 같이 일일히 하드코딩하는 것이 아니라, 컴포넌트별로 렌더링을 해주는 것이다.
-// 그 전에, Sidebar 각각의 메뉴에 focusing 효과를 주는 것부터 해줘야 할듯
