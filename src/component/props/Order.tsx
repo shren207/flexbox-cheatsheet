@@ -7,7 +7,6 @@ export default function Order({
   value: string;
   setValue: (value: string) => void;
 }): JSX.Element {
-  // value => "2", "-1", "5"
   useEffect(() => {
     setValue("2");
     return () => {

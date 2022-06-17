@@ -8,8 +8,6 @@ export default function FlexDirection({
   value: string;
   setValue: (value: string) => void;
 }): JSX.Element {
-  // value => row | row-reverse | column | column-reverse
-  // tailwindcss => flex-row | flex-row-reverse | flex-col | flex-col-reverse
   useEffect(() => {
     setValue("row");
     return () => {

@@ -7,9 +7,8 @@ export default function FlexShrink({
   value: string;
   setValue: (value: string) => void;
 }): JSX.Element {
-  // value => 1, 2, 3
   useEffect(() => {
-    setValue("1");
+    setValue("0");
     return () => {
       setValue("");
     };
@@ -17,9 +16,11 @@ export default function FlexShrink({
 
   return (
     <div className={`container-primary flex`}>
-      <div className={`item-primary bg-cyan-400 shrink`}>Item</div>
-      <div className={"item-primary grow"}>Item</div>
-      <div className={"item-primary grow"}>Item</div>
+      <div className={`item-primary w-1/2 bg-cyan-400 shrink-[${value}]`}>
+        Item
+      </div>
+      <div className={"item-primary w-1/2 shrink"}>Item</div>
+      <div className={"item-primary w-1/2 shrink"}>Item</div>
     </div>
   );
 }

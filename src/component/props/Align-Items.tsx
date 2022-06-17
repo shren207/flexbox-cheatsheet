@@ -7,8 +7,6 @@ export default function AlignItems({
   value: string;
   setValue: (value: string) => void;
 }): JSX.Element {
-  // value => flex-start | flex-end | center | stretch
-  // tailwindcss => items-start | items-end | items-center | items-stretch
   useEffect(() => {
     setValue("flex-start");
     return () => {

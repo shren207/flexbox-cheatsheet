@@ -7,7 +7,6 @@ export default function AlignSelf({
   value: string;
   setValue: (value: string) => void;
 }): JSX.Element {
-  // value => 1, 2, 3
   useEffect(() => {
     setValue("flex-start");
     return () => {

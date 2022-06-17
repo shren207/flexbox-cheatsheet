@@ -7,7 +7,6 @@ export default function FlexGrow({
   value: string;
   setValue: (value: string) => void;
 }): JSX.Element {
-  // value => 0, 1, 2, 3
   useEffect(() => {
     setValue("1");
     return () => {

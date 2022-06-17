@@ -7,8 +7,6 @@ export default function FlexBasis({
   value: string;
   setValue: (value: string) => void;
 }): JSX.Element {
-  // value => auto, 0, 25%, 33%, 50%, 66%, 75%
-  // tainwindcss =>
   useEffect(() => {
     setValue("auto");
     return () => {
@@ -35,7 +33,7 @@ export default function FlexBasis({
             : "basis-3/4"
         }`}
       >
-        I am item
+        I'm item
       </div>
       <div className={"item-primary order-1 grow"}>Item</div>
       <div className={"item-primary order-2 grow"}>Item</div>

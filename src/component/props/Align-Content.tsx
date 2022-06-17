@@ -7,8 +7,6 @@ export default function AlignContent({
   value: string;
   setValue: (value: string) => void;
 }): JSX.Element {
-  // value => flex-start | flex-end | center | space-between | space-around | space-evenly
-  // tailwindcss => content-start | content-end | content-center | content-between | content-around | content-evenly
   useEffect(() => {
     setValue("flex-start");
     return () => {

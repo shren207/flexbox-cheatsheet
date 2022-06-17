@@ -46,7 +46,7 @@ export const dummy = [
     property: "flex-basis",
     subProps: ["auto", "0", "25%", "33%", "50%", "66%", "75%"],
   },
-  { type: "item", property: "flex-shrink", subProps: ["0", "1", "2"] },
+  { type: "item", property: "flex-shrink", subProps: ["0", "1", "2", "3"] },
   {
     type: "item",
     property: "align-self",

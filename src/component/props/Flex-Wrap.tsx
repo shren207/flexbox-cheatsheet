@@ -7,9 +7,6 @@ export default function FlexWrap({
   value: string;
   setValue: (value: string) => void;
 }): JSX.Element {
-  // value => nowrap | wrap | wrap-reverse
-  // tailwindcss => flex-no-wrap | flex-wrap | flex-wrap-reverse
-
   useEffect(() => {
     setValue("nowrap");
     return () => {

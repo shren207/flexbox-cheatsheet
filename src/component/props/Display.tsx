@@ -7,8 +7,6 @@ export default function Display({
   value: string;
   setValue: (value: string) => void;
 }): JSX.Element {
-  // value => flex | inline-flex
-  // tailwindcss => flex | inline-flex
   useEffect(() => {
     setValue("flex");
     return () => {
