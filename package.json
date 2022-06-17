@@ -9,7 +9,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "http://shren207.github.io/flexbox-cheatsheet",
+  "homepage": "https://shren207.github.io/flexbox-cheatsheet/",
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

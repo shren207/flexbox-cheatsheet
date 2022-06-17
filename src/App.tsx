@@ -1,14 +1,14 @@
 import Content from "./component/Content";
 import Sidebar from "./component/Sidebar";
 import Header from "./component/Header";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
   const [clickedProp, setClickedProp] = useState<string>("");
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className={"flex justify-center"}>
         <div className="min-h-screen flex flex-col max-w-[1500px] w-full">
           <Header />
@@ -27,7 +27,7 @@ function App() {
           </div>
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

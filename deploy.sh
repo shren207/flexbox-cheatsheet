@@ -18,9 +18,9 @@ git add -A
 git commit -m 'deploy'
 
 # https://<USERNAME>.github.io 에 배포
- git push -f git@github.com:shren207/shren207.github.io.git main
+# git push -f git@github.com:shren207/shren207.github.io.git main
 
 # https://<USERNAME>.github.io/<REPO> 에 배포
-# git push -f git@github.com:<USERNAME>/<REPO>.git main:gh-pages
+git push -f git@github.com:shren207/flexbox-cheatsheet.git main:gh-pages
 
 cd -
