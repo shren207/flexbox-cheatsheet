@@ -18,9 +18,8 @@ export default function FlexWrap({
   });
 
   return (
-    <>
-      <div
-        className={`container-primary flex 
+    <div
+      className={`flex 
       ${
         value === "nowrap"
           ? "flex-nowrap"
@@ -28,22 +27,49 @@ export default function FlexWrap({
           ? "flex-wrap"
           : "flex-wrap-reverse"
       }`}
-      >
+    >
+      <div className={"container-primary"}>
         <div className={"item-primary"}>One</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Two</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Three</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Four</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Five</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Six</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Seven</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Eight</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Nine</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Ten</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Eleven</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Twelve</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Thirteen</div>
+      </div>
+      <div className={"container-primary"}>
         <div className={"item-primary"}>Fourteen</div>
       </div>
-    </>
+    </div>
   );
 }

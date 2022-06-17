@@ -16,22 +16,29 @@ export default function AlignItems({
     };
   });
   return (
-    <>
-      <div
-        className={`container-primary flex h-full ${
-          value === "flex-start"
-            ? "items-start"
-            : value === "flex-end"
-            ? "items-end"
-            : value === "center"
-            ? "items-center"
-            : "items-stretch"
-        }`}
-      >
+    <div
+      className={`flex h-full ${
+        value === "flex-start"
+          ? "items-start"
+          : value === "flex-end"
+          ? "items-end"
+          : value === "center"
+          ? "items-center"
+          : "items-stretch"
+      }`}
+    >
+      <div className={"container-primary grow"}>
         <div className={"item-primary"}>One</div>
+      </div>
+      <div className={"container-primary grow"}>
         <div className={"item-primary"}>Two</div>
+      </div>
+      <div className={"container-primary grow"}>
         <div className={"item-primary"}>Three</div>
       </div>
-    </>
+      <div className={"container-primary grow"}>
+        <div className={"item-primary"}>Four</div>
+      </div>
+    </div>
   );
 }

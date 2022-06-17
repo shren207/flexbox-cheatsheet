@@ -13,10 +13,9 @@ export default function Dropdown({
   const { subProps } = dummy.find((item) => item["property"] === property)!;
   // '!' 관련해서 에러 핸들링 작성하자..
 
-  // Dropdown component가 필요로 하는 것은 dummy의 property
   return (
-    <nav className={"mb-8"}>
-      <label htmlFor={property} className={"text-xl"}>
+    <nav className={"mb-16"}>
+      <label htmlFor={property} className={"text-2xl"}>
         Choose a {property} value :{" "}
       </label>
       <select id={property} onChange={updateValue}>
