@@ -37,31 +37,36 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
     <article className={"bg-blue-300 w-full flex flex-col items-center"}>
       <header className={"mt-14 mb-16 text-9xl"}>{property}</header>
       <Dropdown property={property} updateValue={updateValue} />
+
       <main className={"bg-white w-[1000px] h-96 border-4"}>
-        {property === "display" ? (
-          <Display value={value} setValue={setValue} />
-        ) : property === "flex-direction" ? (
-          <FlexDirection value={value} setValue={setValue} />
-        ) : property === "flex-wrap" ? (
-          <FlexWrap value={value} setValue={setValue} />
-        ) : property === "justify-content" ? (
-          <JustifyContent value={value} setValue={setValue} />
-        ) : property === "align-items" ? (
-          <AlignItems value={value} setValue={setValue} />
-        ) : property === "align-content" ? (
-          <AlignContent value={value} setValue={setValue} />
-        ) : property === "order" ? (
-          <Order value={value} setValue={setValue} />
-        ) : property === "flex-grow" ? (
-          <FlexGrow value={value} setValue={setValue} />
-        ) : property === "flex-basis" ? (
-          <FlexBasis value={value} setValue={setValue} />
-        ) : property === "flex-shrink" ? (
-          <FlexShrink value={value} setValue={setValue} />
-        ) : property === "align-self" ? (
-          <AlignSelf value={value} setValue={setValue} />
-        ) : null}
-        {/*switch ~ case 문법으로 수정하기*/}
+        {(() => {
+          switch (property) {
+            case "display":
+              return <Display value={value} setValue={setValue} />;
+            case "flex-direction":
+              return <FlexDirection value={value} setValue={setValue} />;
+            case "flex-wrap":
+              return <FlexWrap value={value} setValue={setValue} />;
+            case "justify-content":
+              return <JustifyContent value={value} setValue={setValue} />;
+            case "align-items":
+              return <AlignItems value={value} setValue={setValue} />;
+            case "align-content":
+              return <AlignContent value={value} setValue={setValue} />;
+            case "order":
+              return <Order value={value} setValue={setValue} />;
+            case "flex-grow":
+              return <FlexGrow value={value} setValue={setValue} />;
+            case "flex-shrink":
+              return <FlexShrink value={value} setValue={setValue} />;
+            case "flex-basis":
+              return <FlexBasis value={value} setValue={setValue} />;
+            case "align-self":
+              return <AlignSelf value={value} setValue={setValue} />;
+            default:
+              return <div>Error</div>;
+          }
+        })()}
       </main>
     </article>
   );
