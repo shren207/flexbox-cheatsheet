@@ -8,7 +8,7 @@ export default function FlexGrow({
   setValue: (value: string) => void;
 }): JSX.Element {
   useEffect(() => {
-    setValue("1");
+    setValue("0");
     return () => {
       setValue("");
     };
@@ -16,7 +16,19 @@ export default function FlexGrow({
 
   return (
     <div className={`container-primary flex`}>
-      <div className={`item-primary bg-cyan-400 grow-[${value}]`}>Item</div>
+      <div
+        className={`item-primary bg-cyan-400 ${
+          value === "0"
+            ? "grow-0"
+            : value === "1"
+            ? "grow"
+            : value === "2"
+            ? "grow-[2]"
+            : "grow-[3]"
+        }`}
+      >
+        Item
+      </div>
       <div className={`item-primary grow`}>Item</div>
       <div className={`item-primary grow`}>Item</div>
     </div>

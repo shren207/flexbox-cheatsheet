@@ -61,6 +61,7 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
         ) : property === "align-self" ? (
           <AlignSelf value={value} setValue={setValue} />
         ) : null}
+        {/*switch ~ case 문법으로 수정하기*/}
       </main>
     </article>
   );
