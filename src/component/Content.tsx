@@ -66,6 +66,7 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
         return <div>Error</div>;
     }
   }, [property, value]);
+  // 상태변경함수(setValue)는 굳이 deps에 명시하지 않아도 된다. (함수가 변경될 일은 없기 때문)
 
   return (
     <article className={"bg-blue-300 w-full flex flex-col items-center"}>
