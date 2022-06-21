@@ -35,41 +35,40 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
     []
   );
 
+  const result = useMemo(() => {
+    switch (property) {
+      case "display":
+        return <Display value={value} setValue={setValue} />;
+      case "flex-direction":
+        return <FlexDirection value={value} setValue={setValue} />;
+      case "flex-wrap":
+        return <FlexWrap value={value} setValue={setValue} />;
+      case "justify-content":
+        return <JustifyContent value={value} setValue={setValue} />;
+      case "align-items":
+        return <AlignItems value={value} setValue={setValue} />;
+      case "align-content":
+        return <AlignContent value={value} setValue={setValue} />;
+      case "order":
+        return <Order value={value} setValue={setValue} />;
+      case "flex-grow":
+        return <FlexGrow value={value} setValue={setValue} />;
+      case "flex-shrink":
+        return <FlexShrink value={value} setValue={setValue} />;
+      case "flex-basis":
+        return <FlexBasis value={value} setValue={setValue} />;
+      case "align-self":
+        return <AlignSelf value={value} setValue={setValue} />;
+      default:
+        return <div>Error</div>;
+    }
+  }, [property, value]);
+
   return (
     <article className={"bg-blue-300 w-full flex flex-col items-center"}>
       <header className={"mt-14 mb-16 text-9xl"}>{property}</header>
       <Dropdown property={property} updateValue={updateValue} />
-
-      <main className={"bg-white w-[1000px] h-96 border-4"}>
-        {(() => {
-          switch (property) {
-            case "display":
-              return <Display value={value} setValue={setValue} />;
-            case "flex-direction":
-              return <FlexDirection value={value} setValue={setValue} />;
-            case "flex-wrap":
-              return <FlexWrap value={value} setValue={setValue} />;
-            case "justify-content":
-              return <JustifyContent value={value} setValue={setValue} />;
-            case "align-items":
-              return <AlignItems value={value} setValue={setValue} />;
-            case "align-content":
-              return <AlignContent value={value} setValue={setValue} />;
-            case "order":
-              return <Order value={value} setValue={setValue} />;
-            case "flex-grow":
-              return <FlexGrow value={value} setValue={setValue} />;
-            case "flex-shrink":
-              return <FlexShrink value={value} setValue={setValue} />;
-            case "flex-basis":
-              return <FlexBasis value={value} setValue={setValue} />;
-            case "align-self":
-              return <AlignSelf value={value} setValue={setValue} />;
-            default:
-              return <div>Error</div>;
-          }
-        })()}
-      </main>
+      <main className={"bg-white w-[1000px] h-96 border-4"}>{result}</main>
     </article>
   );
 }
