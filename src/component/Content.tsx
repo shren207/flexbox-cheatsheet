@@ -27,14 +27,17 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
     setClickedProp(property);
     setValue(value);
   }, [property, value]);
+  // deps에 상태변경함수(setValue)도 inject해 주어야 하느냐로 찬반이 갈리는데, 굳이 안 넣어도 상관은 없음
 
   const updateValue = useCallback(
     (event: ChangeEvent<HTMLSelectElement>): void => {
       setValue(event.target.value);
     },
     []
+    // 여기도 위의 useEffect와 마찬가지로 deps에 굳이 상태변경함수(setValue)는 안 넣어도 상관없음
   );
 
+  // useMemo 사용한 switch 문으로 conditional rendering 최적화
   const result = useMemo(() => {
     switch (property) {
       case "display":
