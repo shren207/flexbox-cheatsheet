@@ -22,7 +22,11 @@ export default function Order({
       <div className={"container-primary grow order-2"}>
         <div className={"item-primary"}>order : 2</div>
       </div>
-      <div className={`container-primary grow order-${value}`}>
+      <div
+        className={`container-primary grow ${
+          value === "2" ? "order-2" : value === "-1" ? "-order-1" : "order-5"
+        }`}
+      >
         <div className={`item-primary bg-cyan-400`}>Me</div>
       </div>
       <div className={"container-primary grow order-3"}>

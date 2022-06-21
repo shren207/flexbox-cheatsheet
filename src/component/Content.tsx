@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { ChangeEvent, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
 import { dummy } from "../static/dummy";
 import Dropdown from "./Dropdown";
 import Display from "./props/Display";
@@ -20,7 +20,6 @@ type ContentProps = {
 
 export default function Content({ setClickedProp }: ContentProps): JSX.Element {
   const { property = "display" } = useParams(); // display, flex-direction 이런 값들이 들어온다.
-  if (property === undefined) return <div>Error</div>;
   const { subProps } = dummy.find((item) => item["property"] === property)!;
   const [value, setValue] = useState<string>(subProps[0]);
 
@@ -29,9 +28,12 @@ export default function Content({ setClickedProp }: ContentProps): JSX.Element {
     setValue(value);
   }, [property, value]);
 
-  const updateValue = (event: ChangeEvent<HTMLSelectElement>): void => {
-    setValue(event.target.value);
-  };
+  const updateValue = useCallback(
+    (event: ChangeEvent<HTMLSelectElement>): void => {
+      setValue(event.target.value);
+    },
+    []
+  );
 
   return (
     <article className={"bg-blue-300 w-full flex flex-col items-center"}>
